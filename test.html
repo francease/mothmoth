@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Love On Click</title>
+    <style>
+        #loveText {
+            display: none;
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<div id="loveText">I love you</div>
+
+<script>
+document.addEventListener("click", function(event) {
+    var loveText = document.getElementById("loveText");
+    loveText.style.display = "block";
+    loveText.style.left = event.clientX + "px";
+    loveText.style.top = event.clientY + "px";
+
+    setTimeout(function() {
+        loveText.style.display = "none";
+    }, 2000); // Display "I love you" for 2 seconds
+});
+</script>
+
+</body>
+</html>

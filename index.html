@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Sorry Reyet</title>
+    <style>
+
+    </style>
+</head>
+<body onclick="typeWriter()">
+    <h1 >Hello Baby Yetooth</h2>
+    <p id="demo"></p>
+
+    <div class="button">
+        <button>
+            <a href="greetings.html">By the way, I'd like to tell you something</a>
+        </button>
+        
+    </div>
+
+    
+
+
+
+
+    <script>
+        var i = 0;
+        var txt= 'I know I\'ve been pabadlong lately and I\'m very sorry for that.\n'
+        + 'I\'m to overwhelm with the things that needs to be accomplished and wasn\'t able to think properly. \n'
+        + 'I deeply apologize for that epsecially for the reckless decision I made.';
+        var speed = 50;
+        
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+
+             // Check for newline character and add an actual line break
+            if (txt.charAt(i - 1) === '\n') {
+                document.getElementById("demo").innerHTML += '<br>';
+            }
+            
+          }else {
+            // Text has been fully typed, show the button
+            document.querySelector('.button').style.display = 'block';
+        }
+        }
+        </script>
+    
+</body>
+</html>
